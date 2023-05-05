@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolMGT.Api.Domain", "Sch
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolMGT.Api.Service", "SchoolMGT.Api.Service\SchoolMGT.Api.Service.csproj", "{750BD179-8BB3-48BA-A180-42567FF2B8A6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolMGT.Api.Repository", "SchoolMGT.Api.Repository\SchoolMGT.Api.Repository.csproj", "{16331C3D-5580-48F9-B2B6-35AD9C77FA88}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{750BD179-8BB3-48BA-A180-42567FF2B8A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{750BD179-8BB3-48BA-A180-42567FF2B8A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{750BD179-8BB3-48BA-A180-42567FF2B8A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16331C3D-5580-48F9-B2B6-35AD9C77FA88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16331C3D-5580-48F9-B2B6-35AD9C77FA88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16331C3D-5580-48F9-B2B6-35AD9C77FA88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16331C3D-5580-48F9-B2B6-35AD9C77FA88}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
