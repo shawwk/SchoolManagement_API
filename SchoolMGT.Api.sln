@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolMGT.Api", "SchoolMGT.Api\SchoolMGT.Api.csproj", "{A74042E0-79ED-4D76-926B-1D809D702EAA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolMGT.Api", "SchoolMGT.Api\SchoolMGT.Api.csproj", "{A74042E0-79ED-4D76-926B-1D809D702EAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolMGT.API.Domain", "SchoolMGT.API.Domain\SchoolMGT.API.Domain.csproj", "{863E1D94-0BEB-42C0-8D58-E86FDA19E9BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolMGT.Api.Service", "SchoolMGT.Api.Service\SchoolMGT.Api.Service.csproj", "{750BD179-8BB3-48BA-A180-42567FF2B8A6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{A74042E0-79ED-4D76-926B-1D809D702EAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A74042E0-79ED-4D76-926B-1D809D702EAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A74042E0-79ED-4D76-926B-1D809D702EAA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{863E1D94-0BEB-42C0-8D58-E86FDA19E9BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{863E1D94-0BEB-42C0-8D58-E86FDA19E9BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{863E1D94-0BEB-42C0-8D58-E86FDA19E9BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{863E1D94-0BEB-42C0-8D58-E86FDA19E9BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{750BD179-8BB3-48BA-A180-42567FF2B8A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{750BD179-8BB3-48BA-A180-42567FF2B8A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{750BD179-8BB3-48BA-A180-42567FF2B8A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{750BD179-8BB3-48BA-A180-42567FF2B8A6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
