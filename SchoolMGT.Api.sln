@@ -5,7 +5,7 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolMGT.Api", "SchoolMGT.Api\SchoolMGT.Api.csproj", "{A74042E0-79ED-4D76-926B-1D809D702EAA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolMGT.API.Domain", "SchoolMGT.API.Domain\SchoolMGT.API.Domain.csproj", "{863E1D94-0BEB-42C0-8D58-E86FDA19E9BB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolMGT.Api.Domain", "SchoolMGT.API.Domain\SchoolMGT.Api.Domain.csproj", "{863E1D94-0BEB-42C0-8D58-E86FDA19E9BB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolMGT.Api.Service", "SchoolMGT.Api.Service\SchoolMGT.Api.Service.csproj", "{750BD179-8BB3-48BA-A180-42567FF2B8A6}"
 EndProject
