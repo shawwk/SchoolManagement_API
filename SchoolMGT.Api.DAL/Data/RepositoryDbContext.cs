@@ -22,7 +22,6 @@ namespace SchoolMGT.Api.Repository.Data
         public DbSet<Section> Section { get; set; }
         public DbSet<Course> Course { get; set; }
         public DbSet<Enrollment> Enrollment { get; set; }
-        public DbSet<List<Student>> Students { get;set; }
 
     }
 }

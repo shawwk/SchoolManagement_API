@@ -5,10 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SchoolMGT.Api.Repository.StudentRepository
+namespace SchoolMGT.Api.Service.StudentService
 {
-    public interface IStudentRepository
+    public interface IStudentService
     {
-        public Task<List<Student>> GetStudents();
+        Task<List<Student>> GetAllStudents();
     }
 }

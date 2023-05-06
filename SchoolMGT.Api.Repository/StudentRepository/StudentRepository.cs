@@ -17,9 +17,10 @@ namespace SchoolMGT.Api.Repository.StudentRepository
         {
             _dbContext = dbContext;
         }
-        public Task<Student> AddStudent(Student student)
+
+        public async Task<List<Student>> GetStudents()
         {
-            throw new NotImplementedException();
+           return _dbContext.Student.ToList();
         }
     }
 }

@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SchoolMGT.API.Domain\SchoolMGT.Api.Domain.csproj" />
+    <ProjectReference Include="..\SchoolMGT.Api.Repository\SchoolMGT.Api.Repository.csproj" />
   </ItemGroup>
 
 </Project>

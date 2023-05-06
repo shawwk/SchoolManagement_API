@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using SchoolMGT.Api.Repository.Data;
+using SchoolMGT.Api.Repository.StudentRepository;
+using SchoolMGT.Api.Service.StudentService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +16,9 @@ builder.Services.AddDbContext<RepositoryDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DbConnection"));
 });
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
+
+builder.Services.AddScoped<IStudentService, StudentService>();
+builder.Services.AddScoped<IStudentRepository, StudentRepository>();
 
 var app = builder.Build();
 

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SchoolMGT.Api.Service.StudentService;
 
 namespace SchoolMGT.Api.Controllers
 {
@@ -7,9 +8,20 @@ namespace SchoolMGT.Api.Controllers
     [ApiController]
     public class StudentController : ControllerBase
     {
-        public StudentController()
+        private readonly IStudentService _studentService;
+        public StudentController(IStudentService studentService)
         {
-
+            _studentService = studentService;
+        }
+        [HttpGet]
+        public async Task<IActionResult> GetStudents()
+        {
+            var students = await _studentService.GetAllStudents();
+            if(students == null)
+            {
+                return NotFound();
+            }
+            return Ok(students);
         }
     }
 }

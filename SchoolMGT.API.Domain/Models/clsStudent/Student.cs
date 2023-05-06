@@ -1,11 +1,13 @@
 ﻿using SchoolMGT.Api.Domain.clsEnums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace SchoolMGT.Api.Domain.Models.clsStudent;
 
 public partial class Student
 {
+    [Key]
     public long Id { get; set; }
 
     public string? FirstName { get; set; }
