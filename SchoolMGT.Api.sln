@@ -5,11 +5,13 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolMGT.Api", "SchoolMGT.Api\SchoolMGT.Api.csproj", "{A74042E0-79ED-4D76-926B-1D809D702EAA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolMGT.Api.Domain", "SchoolMGT.API.Domain\SchoolMGT.Api.Domain.csproj", "{863E1D94-0BEB-42C0-8D58-E86FDA19E9BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolMGT.Api.Domain", "SchoolMGT.API.Domain\SchoolMGT.Api.Domain.csproj", "{863E1D94-0BEB-42C0-8D58-E86FDA19E9BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolMGT.Api.Service", "SchoolMGT.Api.Service\SchoolMGT.Api.Service.csproj", "{750BD179-8BB3-48BA-A180-42567FF2B8A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolMGT.Api.Service", "SchoolMGT.Api.Service\SchoolMGT.Api.Service.csproj", "{750BD179-8BB3-48BA-A180-42567FF2B8A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolMGT.Api.Repository", "SchoolMGT.Api.Repository\SchoolMGT.Api.Repository.csproj", "{16331C3D-5580-48F9-B2B6-35AD9C77FA88}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SchoolMGT.Api.Repository", "SchoolMGT.Api.Repository\SchoolMGT.Api.Repository.csproj", "{16331C3D-5580-48F9-B2B6-35AD9C77FA88}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolMGT.Api.DAL", "SchoolMGT.Api.DAL\SchoolMGT.Api.DAL.csproj", "{FA9BA81F-C6BD-41A3-B84E-E471DD582142}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{16331C3D-5580-48F9-B2B6-35AD9C77FA88}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{16331C3D-5580-48F9-B2B6-35AD9C77FA88}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{16331C3D-5580-48F9-B2B6-35AD9C77FA88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA9BA81F-C6BD-41A3-B84E-E471DD582142}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA9BA81F-C6BD-41A3-B84E-E471DD582142}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA9BA81F-C6BD-41A3-B84E-E471DD582142}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA9BA81F-C6BD-41A3-B84E-E471DD582142}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
