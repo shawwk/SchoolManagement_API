@@ -13,6 +13,7 @@ builder.Services.AddDbContext<RepositoryDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DbConnection"));
 });
+builder.Services.AddAutoMapper(typeof(Program).Assembly);
 
 var app = builder.Build();
 

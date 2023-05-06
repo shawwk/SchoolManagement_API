@@ -17,12 +17,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\SchoolMGT.Api.DAL\SchoolMGT.Api.DAL.csproj" />
     <ProjectReference Include="..\SchoolMGT.API.Domain\SchoolMGT.Api.Domain.csproj" />
+    <ProjectReference Include="..\SchoolMGT.Api.Service\SchoolMGT.Api.Service.csproj" />
   </ItemGroup>
 
 </Project>

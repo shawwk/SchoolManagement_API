@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\SchoolMGT.Api.DAL\SchoolMGT.Api.DAL.csproj" />
     <ProjectReference Include="..\SchoolMGT.API.Domain\SchoolMGT.Api.Domain.csproj" />
   </ItemGroup>
 
