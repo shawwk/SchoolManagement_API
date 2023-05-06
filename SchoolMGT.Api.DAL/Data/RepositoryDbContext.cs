@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SchoolMGT.Api.Domain.Models.clsSection;
 using SchoolMGT.Api.Domain.Models.clsCourse;
+using SchoolMGT.Api.Domain.Models.clsEnrollment;
 
 namespace SchoolMGT.Api.Repository.Data
 {
@@ -20,9 +21,7 @@ namespace SchoolMGT.Api.Repository.Data
         public DbSet<Teacher> Teacher { get; set; }
         public DbSet<Section> Section { get; set; }
         public DbSet<Course> Course { get; set; }
-        protected override void OnConfiguring(DbContextOptionsBuilder dbContextOptions)
-        {
-            dbContextOptions.UseSqlServer("Server=localhost; Database=SchoolManagement; User Id=sa; Password=qazwsxedc; TrustServerCertificate=True");
-        }
+        public DbSet<Enrollment> Enrollment { get; set; }
+
     }
 }
