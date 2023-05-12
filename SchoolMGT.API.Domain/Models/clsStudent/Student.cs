@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace SchoolMGT.Api.Domain.Models.clsStudent;
 
-public partial class Student
+public  class Student
 {
     [Key]
     public long Id { get; set; }

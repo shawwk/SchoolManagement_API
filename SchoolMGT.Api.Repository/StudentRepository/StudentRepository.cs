@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using SchoolMGT.Api.Domain.Models.clsStudent;
 using SchoolMGT.Api.Repository.Data;
@@ -13,14 +14,23 @@ namespace SchoolMGT.Api.Repository.StudentRepository
     public class StudentRepository : IStudentRepository
     {
         private readonly RepositoryDbContext _dbContext;
-        public StudentRepository(RepositoryDbContext dbContext)
+        private readonly IMapper _mapper;
+        public StudentRepository(RepositoryDbContext dbContext, IMapper mapper)
         {
             _dbContext = dbContext;
+            _mapper = mapper;
         }
 
-        public async Task<List<Student>> GetStudents()
+        public async Task<StudentDTO> AddStudent()
         {
-           return _dbContext.Student.ToList();
+            var students = await _dbContext.Student.FirstOrDefaultAsync(x => x.Id == 1);
+            return _mapper.Map<StudentDTO>(students);
+        }
+
+        public async Task<List<StudentDTO>> GetStudents()
+        {
+            var students = await _dbContext.Student.ToListAsync();
+           return _mapper.Map<List<StudentDTO>>(students);
         }
     }
 }

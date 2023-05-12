@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace SchoolMGT.Api.Service.AutoMapper
 {
-    public class Mapper : Profile
+    public class ApplicationMapper : Profile
     {
-        public Mapper()
+        public ApplicationMapper()
         {
             CreateMap<Student, StudentDTO>().ReverseMap();
         }

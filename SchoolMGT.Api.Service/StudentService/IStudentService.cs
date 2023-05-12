@@ -9,6 +9,7 @@ namespace SchoolMGT.Api.Service.StudentService
 {
     public interface IStudentService
     {
-        Task<List<Student>> GetAllStudents();
+        Task<List<StudentDTO>> GetAllStudents();
+        Task<StudentDTO> AddStudent(StudentDTO student);
     }
 }
