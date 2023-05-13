@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Routing;
+using SchoolMGT.Api.Domain.Models.clsStudent;
 using SchoolMGT.Api.Service.StudentService;
 
 namespace SchoolMGT.Api.Controllers
@@ -14,22 +15,25 @@ namespace SchoolMGT.Api.Controllers
         {
             _studentService = studentService;
         }
-        [HttpGet]
-        [Route("GetStudents")]
-        public async Task<IActionResult> GetStudents()
+        [HttpPost]
+        [Route("Save")]
+        public async Task<IActionResult> AddStudent([FromBody]StudentDTO student)
         {
-            var students = await _studentService.GetAllStudents();
-            if(students == null)
-            {
-                return NotFound();
-            }
-            return Ok(students);
+            var AddStudent = await _studentService.AddStudent(student);
+            return Ok(AddStudent);
+        }
+        [HttpPut]
+        [Route("Update")]
+        public async Task<IActionResult> UpdateStudent([FromBody]Student student)
+        {
+            var updateStudent = await _studentService.UpdateStudent(student);
+            return Ok(updateStudent);
         }
         [HttpGet]
-        [Route("GetStudent")]
+        [Route("GetStudents")]
         public async Task<IActionResult> GetStudent()
         {
-            var students = await _studentService.AddStudent(new Domain.Models.clsStudent.StudentDTO());
+            var students = await _studentService.GetAllStudents();
             if (students == null)
             {
                 return NotFound();

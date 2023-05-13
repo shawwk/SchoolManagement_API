@@ -11,5 +11,6 @@ namespace SchoolMGT.Api.Service.StudentService
     {
         Task<List<StudentDTO>> GetAllStudents();
         Task<StudentDTO> AddStudent(StudentDTO student);
+        Task<Student> UpdateStudent(Student student);
     }
 }

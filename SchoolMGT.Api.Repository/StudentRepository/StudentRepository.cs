@@ -21,16 +21,27 @@ namespace SchoolMGT.Api.Repository.StudentRepository
             _mapper = mapper;
         }
 
-        public async Task<StudentDTO> AddStudent()
+        public async Task<StudentDTO> AddStudent(StudentDTO student)
         {
-            var students = await _dbContext.Student.FirstOrDefaultAsync(x => x.Id == 1);
-            return _mapper.Map<StudentDTO>(students);
+            var stud =  _mapper.Map<Student>(student);
+            await _dbContext.Student.AddAsync(stud);
+            await _dbContext.SaveChangesAsync();
+            return student;
         }
 
         public async Task<List<StudentDTO>> GetStudents()
         {
             var students = await _dbContext.Student.ToListAsync();
            return _mapper.Map<List<StudentDTO>>(students);
+        }
+
+        public async Task<Student> UpdateStudent(Student student)
+        {
+            //var stud = _mapper.Map<StudentDTO>(student);
+            _dbContext.Add(student);
+            _dbContext.Entry(student).State = EntityState.Modified;
+            await _dbContext.SaveChangesAsync();
+            return student;
         }
     }
 }

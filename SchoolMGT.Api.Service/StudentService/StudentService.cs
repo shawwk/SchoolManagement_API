@@ -19,9 +19,13 @@ namespace SchoolMGT.Api.Service.StudentService
             _studentRepository = studentRepository;
         }
 
-        public Task<StudentDTO> AddStudent(StudentDTO student)
+        public async Task<StudentDTO> AddStudent(StudentDTO student)
         {
-            return _studentRepository.AddStudent();
+            return await _studentRepository.AddStudent(student);
+        }
+        public async Task<Student> UpdateStudent(Student student)
+        {
+            return await _studentRepository.UpdateStudent(student);
         }
 
         public async Task<List<StudentDTO>> GetAllStudents()
