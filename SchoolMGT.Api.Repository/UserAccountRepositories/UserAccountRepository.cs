@@ -28,12 +28,13 @@ namespace SchoolMGT.Api.Repository.UserAccountRepository
             throw new NotImplementedException();
         }
 
-        public async Task<string> Authenticate(UserAccountDTO userAccount)
+        public async Task<UserAccountDTO> Authenticate(UserAccountDTO userAccount)
         {
-            var account = _mapper.Map<UserAccount>(userAccount);
             var user = await _context.UserAccounts.SingleOrDefaultAsync(x=>x.UserName == userAccount.UserName && x.Password == userAccount.Password);
-            if (user == null) return JwtManager.GenerateToken(account);
-            else return "";
+            if (user == null)
+                return new UserAccountDTO() ;
+            else 
+                return _mapper.Map<UserAccountDTO>(user);
         }
 
         public Task<UserAccount> UpdateUser(UserAccount userAccount)

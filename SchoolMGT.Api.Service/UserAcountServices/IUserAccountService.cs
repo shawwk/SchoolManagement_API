@@ -5,12 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SchoolMGT.Api.Repository.UserAccountRepositories
+namespace SchoolMGT.Api.Service.UserAcountServices
 {
-    public interface IUserAccountRepository
+    public interface IUserAccountService
     {
         Task<UserAccountDTO> AddUser(UserAccountDTO userAccount);
-        Task<UserAccount> UpdateUser(UserAccount userAccount);
-        Task<UserAccountDTO> Authenticate(UserAccountDTO userAccount);
+        Task<UserAccountDTO> UpdateUser(UserAccountDTO userAccount);
+        Task<UserAccountDTO> AuthenticateUser(UserAccountDTO userAccount);
     }
 }
