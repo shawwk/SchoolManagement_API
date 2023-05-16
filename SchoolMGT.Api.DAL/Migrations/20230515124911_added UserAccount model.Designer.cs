@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using SchoolMGT.Api.Repository.Data;
 
@@ -11,9 +12,11 @@ using SchoolMGT.Api.Repository.Data;
 namespace SchoolMGT.Api.DAL.Migrations
 {
     [DbContext(typeof(RepositoryDbContext))]
-    partial class RepositoryDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230515124911_added UserAccount model")]
+    partial class addedUserAccountmodel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,6 +24,40 @@ namespace SchoolMGT.Api.DAL.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("SchoolMGT.Api.Domain.Models.UserAccount", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long>("StudentId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("TeacherId")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("UserId")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("StudentId");
+
+                    b.HasIndex("TeacherId");
+
+                    b.ToTable("userAccounts");
+                });
 
             modelBuilder.Entity("SchoolMGT.Api.Domain.Models.clsCourse.Course", b =>
                 {
@@ -194,38 +231,23 @@ namespace SchoolMGT.Api.DAL.Migrations
                     b.ToTable("Teacher");
                 });
 
-            modelBuilder.Entity("SchoolMGT.Api.Domain.Models.clsUser.UserAccount", b =>
+            modelBuilder.Entity("SchoolMGT.Api.Domain.Models.UserAccount", b =>
                 {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
+                    b.HasOne("SchoolMGT.Api.Domain.Models.clsStudent.Student", "Student")
+                        .WithMany()
+                        .HasForeignKey("StudentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+                    b.HasOne("SchoolMGT.Api.Domain.Models.clsTeacher.Teacher", "Teacher")
+                        .WithMany()
+                        .HasForeignKey("TeacherId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Navigation("Student");
 
-                    b.Property<long>("StudentId")
-                        .HasColumnType("bigint");
-
-                    b.Property<long>("TeacherId")
-                        .HasColumnType("bigint");
-
-                    b.Property<long>("UserId")
-                        .HasColumnType("bigint");
-
-                    b.Property<string>("UserName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("StudentId");
-
-                    b.HasIndex("TeacherId");
-
-                    b.ToTable("UserAccounts");
+                    b.Navigation("Teacher");
                 });
 
             modelBuilder.Entity("SchoolMGT.Api.Domain.Models.clsEnrollment.Enrollment", b =>
@@ -260,25 +282,6 @@ namespace SchoolMGT.Api.DAL.Migrations
                     b.HasOne("SchoolMGT.Api.Domain.Models.clsEnrollment.Enrollment", null)
                         .WithMany("Subjects")
                         .HasForeignKey("EnrollmentId");
-                });
-
-            modelBuilder.Entity("SchoolMGT.Api.Domain.Models.clsUser.UserAccount", b =>
-                {
-                    b.HasOne("SchoolMGT.Api.Domain.Models.clsStudent.Student", "Student")
-                        .WithMany()
-                        .HasForeignKey("StudentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("SchoolMGT.Api.Domain.Models.clsTeacher.Teacher", "Teacher")
-                        .WithMany()
-                        .HasForeignKey("TeacherId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Student");
-
-                    b.Navigation("Teacher");
                 });
 
             modelBuilder.Entity("SchoolMGT.Api.Domain.Models.clsEnrollment.Enrollment", b =>

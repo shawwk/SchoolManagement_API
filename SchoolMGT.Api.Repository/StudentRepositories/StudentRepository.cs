@@ -37,7 +37,7 @@ namespace SchoolMGT.Api.Repository.StudentRepository
 
         public async Task<Student> UpdateStudent(Student student)
         {
-            _dbContext.Add(student);
+            await _dbContext.Student.AddAsync(student);
             _dbContext.Entry(student).State = EntityState.Modified;
             await _dbContext.SaveChangesAsync();
             return student;

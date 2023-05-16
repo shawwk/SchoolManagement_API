@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using SchoolMGT.Api.Domain.Models.clsStudent;
+using SchoolMGT.Api.Domain.Models.clsUser;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,7 @@ namespace SchoolMGT.Api.Service.AutoMapper
         public ApplicationMapper()
         {
             CreateMap<Student, StudentDTO>().ReverseMap();
+            CreateMap<UserAccount, UserAccountDTO>().ReverseMap();
         }
     }
 }

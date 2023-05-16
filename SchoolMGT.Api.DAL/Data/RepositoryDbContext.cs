@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using SchoolMGT.Api.Domain.Models.clsSection;
 using SchoolMGT.Api.Domain.Models.clsCourse;
 using SchoolMGT.Api.Domain.Models.clsEnrollment;
+using SchoolMGT.Api.Domain.Models.clsUser;
 
 namespace SchoolMGT.Api.Repository.Data
 {
@@ -22,6 +23,7 @@ namespace SchoolMGT.Api.Repository.Data
         public DbSet<Section> Section { get; set; }
         public DbSet<Course> Course { get; set; }
         public DbSet<Enrollment> Enrollment { get; set; }
+        public DbSet<UserAccount> UserAccounts { get; set; }
 
     }
 }

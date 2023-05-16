@@ -14,5 +14,11 @@ namespace SchoolMGT.Api.Domain.clsEnums
             Female = 1,
             Other = 2,
         }
+        public enum UserRole
+        {
+            Administrator = 0,
+            Registrar = 1,
+            Student = 2,
+        }
     }
 }
