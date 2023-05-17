@@ -14,11 +14,11 @@ using SchoolMGT.Api.Common;
 
 namespace SchoolMGT.Api.Repository.UserAccountRepository
 {
-    public class UserAccountService : IUserAccountRepository
+    public class UserAccountRepository : IUserAccountRepository
     {
         private readonly RepositoryDbContext _context;
         private readonly IMapper _mapper;
-        public UserAccountService(RepositoryDbContext context, IMapper mapper)
+        public UserAccountRepository(RepositoryDbContext context, IMapper mapper)
         {
             _context = context;
             _mapper = mapper;

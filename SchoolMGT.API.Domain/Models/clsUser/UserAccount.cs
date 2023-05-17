@@ -15,7 +15,7 @@ namespace SchoolMGT.Api.Domain.Models.clsUser
         public string UserName { get; set; }
         public string Password { get; set; }
         public long UserId { get; set; }
-        public Enums.UserRole Role { get; set; }
+        //public Enums.UserRole Role { get; set; }
         public virtual Student Student { get; set; }
         public virtual Teacher Teacher { get; set; }
 

@@ -27,7 +27,7 @@ namespace SchoolMGT.Api.Service.UserAcountServices
         public async Task<UserAccountDTO> AuthenticateUser(UserAccountDTO userAccount)
         {
             var account =  await _userAccountRepository.Authenticate(userAccount);
-            if (account != null)
+            if (account.UserName != "")
             {
                 account.Token = JwtManager.GenerateToken(_mapper.Map<UserAccount>(account));
                 return account;

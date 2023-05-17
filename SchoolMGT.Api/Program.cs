@@ -3,7 +3,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using SchoolMGT.Api.Repository.Data;
 using SchoolMGT.Api.Repository.StudentRepository;
+using SchoolMGT.Api.Repository.UserAccountRepositories;
+using SchoolMGT.Api.Repository.UserAccountRepository;
 using SchoolMGT.Api.Service.StudentService;
+using SchoolMGT.Api.Service.UserAcountServices;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -32,6 +35,8 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJw
 });
 builder.Services.AddScoped<IStudentService, StudentService>();
 builder.Services.AddScoped<IStudentRepository, StudentRepository>();
+builder.Services.AddScoped<IUserAccountService, UserAccountService>();
+builder.Services.AddScoped<IUserAccountRepository, UserAccountRepository>();
 
 var app = builder.Build();
 

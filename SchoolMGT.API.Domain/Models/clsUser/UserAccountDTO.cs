@@ -8,8 +8,14 @@ namespace SchoolMGT.Api.Domain.Models.clsUser
 {
     public class UserAccountDTO
     {
-        public string UserName;
-        public string Password;
-        public string Token;
+        public UserAccountDTO()
+        {
+            UserName = "";
+            Password = "";
+            Token = "";
+        }
+        public string UserName { get; set; }
+        public string Password { get; set; }
+        public string Token { get; set; }
     }
 }
