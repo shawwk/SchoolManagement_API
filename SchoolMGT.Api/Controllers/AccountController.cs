@@ -16,7 +16,7 @@ namespace SchoolMGT.Api.Controllers
         }
 
         [HttpPost]
-        [Route("Authenticate")]
+        [Route("v1/authenticate")]
         public async Task<IActionResult> Authenticate([FromBody]UserAccountDTO userAccount) 
         {
             var _account = await _userAccountService.AuthenticateUser(userAccount);
@@ -24,6 +24,15 @@ namespace SchoolMGT.Api.Controllers
                 return NotFound("Username not found: " + userAccount.UserName);
             }
             return Ok(_account.Token);
+        }
+        [HttpPost]
+        [Route("v1/add")]
+        public async Task<IActionResult> AddNew([FromBody]UserAccount userAccount)
+        {
+            var account = await _userAccountService.AddUser(userAccount);
+            if (account.UserName == "")
+                return BadRequest();
+            return Ok(account);
         }
     }
 }

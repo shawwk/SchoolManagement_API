@@ -24,6 +24,6 @@ namespace SchoolMGT.Api.Repository.Data
         public DbSet<Course> Course { get; set; }
         public DbSet<Enrollment> Enrollment { get; set; }
         public DbSet<UserAccount> UserAccounts { get; set; }
-
+        public DbSet<UserAccount> UserAccounts2 { get; set; }
     }
 }

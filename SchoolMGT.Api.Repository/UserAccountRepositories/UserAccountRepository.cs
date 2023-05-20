@@ -11,6 +11,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using SchoolMGT.Api.Common;
+using SchoolMGT.Api.Helper;
 
 namespace SchoolMGT.Api.Repository.UserAccountRepository
 {
@@ -23,18 +24,36 @@ namespace SchoolMGT.Api.Repository.UserAccountRepository
             _context = context;
             _mapper = mapper;
         }
-        public Task<UserAccountDTO> AddUser(UserAccountDTO userAccount)
+        public async Task<UserAccountDTO> AddUser(UserAccount userAccount)
         {
-            throw new NotImplementedException();
+            try
+            {
+                await _context.UserAccounts.AddAsync(userAccount);
+                await _context.SaveChangesAsync();
+                return _mapper.Map<UserAccountDTO>(userAccount);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error creating user account: " + ex.Message);
+            }
         }
 
         public async Task<UserAccountDTO> Authenticate(UserAccountDTO userAccount)
         {
-            var user = await _context.UserAccounts.SingleOrDefaultAsync(x=>x.UserName == userAccount.UserName && x.Password == userAccount.Password);
-            if (user == null)
-                return new UserAccountDTO() ;
-            else 
-                return _mapper.Map<UserAccountDTO>(user);
+            try
+            {
+                var user = await _context.UserAccounts.SingleOrDefaultAsync(x => x.UserName == userAccount.UserName 
+                && x.Password == userAccount.Password);
+                if (user == null)
+                    return new UserAccountDTO();
+                else
+                    return _mapper.Map<UserAccountDTO>(user);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error authenticating user acount: " + ex.Message);
+            }
+         
         }
 
         public Task<UserAccount> UpdateUser(UserAccount userAccount)

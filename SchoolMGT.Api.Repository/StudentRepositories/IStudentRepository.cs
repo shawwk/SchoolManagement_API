@@ -9,8 +9,10 @@ namespace SchoolMGT.Api.Repository.StudentRepository
 {
     public interface IStudentRepository
     {
-        public Task<List<StudentDTO>> GetStudents();
-        public Task<StudentDTO> AddStudent(StudentDTO student);
-        public Task<Student> UpdateStudent(Student student);
+        Task<List<StudentDTO>> GetStudents();
+        Task<StudentDTO> AddStudent(StudentDTO student);
+        Task<Student> UpdateStudent(Student student);
+        Task<StudentDTO> GetStudentById(long studentId);
+        
     }
 }

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using SchoolMGT.Api.Common;
 using SchoolMGT.Api.Domain.Models.clsUser;
+using SchoolMGT.Api.Helper;
 using SchoolMGT.Api.Repository.UserAccountRepositories;
 using System;
 using System.Collections.Generic;
@@ -19,13 +20,24 @@ namespace SchoolMGT.Api.Service.UserAcountServices
             _mapper = mapper;
             _userAccountRepository = userAccountRepository;
         }
-        public Task<UserAccountDTO> AddUser(UserAccountDTO userAccount)
+        public async Task<UserAccountDTO> AddUser(UserAccount userAccount)
         {
-            throw new NotImplementedException();
+            try
+            {
+                userAccount.Password = PasswordHelper.EncryptPassword(userAccount.Password);
+                var user = await _userAccountRepository.AddUser(userAccount);
+                return user;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public async Task<UserAccountDTO> AuthenticateUser(UserAccountDTO userAccount)
         {
+            userAccount.Password = PasswordHelper.EncryptPassword(userAccount.Password);
             var account =  await _userAccountRepository.Authenticate(userAccount);
             if (account.UserName != "")
             {

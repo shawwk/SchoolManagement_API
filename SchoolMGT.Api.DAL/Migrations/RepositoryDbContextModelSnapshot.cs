@@ -206,11 +206,8 @@ namespace SchoolMGT.Api.DAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<long>("StudentId")
-                        .HasColumnType("bigint");
-
-                    b.Property<long>("TeacherId")
-                        .HasColumnType("bigint");
+                    b.Property<int>("Role")
+                        .HasColumnType("int");
 
                     b.Property<long>("UserId")
                         .HasColumnType("bigint");
@@ -221,11 +218,7 @@ namespace SchoolMGT.Api.DAL.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("StudentId");
-
-                    b.HasIndex("TeacherId");
-
-                    b.ToTable("UserAccounts");
+                    b.ToTable("UserAccount");
                 });
 
             modelBuilder.Entity("SchoolMGT.Api.Domain.Models.clsEnrollment.Enrollment", b =>
@@ -260,25 +253,6 @@ namespace SchoolMGT.Api.DAL.Migrations
                     b.HasOne("SchoolMGT.Api.Domain.Models.clsEnrollment.Enrollment", null)
                         .WithMany("Subjects")
                         .HasForeignKey("EnrollmentId");
-                });
-
-            modelBuilder.Entity("SchoolMGT.Api.Domain.Models.clsUser.UserAccount", b =>
-                {
-                    b.HasOne("SchoolMGT.Api.Domain.Models.clsStudent.Student", "Student")
-                        .WithMany()
-                        .HasForeignKey("StudentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("SchoolMGT.Api.Domain.Models.clsTeacher.Teacher", "Teacher")
-                        .WithMany()
-                        .HasForeignKey("TeacherId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Student");
-
-                    b.Navigation("Teacher");
                 });
 
             modelBuilder.Entity("SchoolMGT.Api.Domain.Models.clsEnrollment.Enrollment", b =>

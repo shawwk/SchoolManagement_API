@@ -8,7 +8,7 @@ namespace SchoolMGT.Api.Common
 {
     public static class JwtManager
     {
-        private static readonly string secretKey = "RCWIWJUH81aqxasd112312441XXASdaASDASD";
+        private static readonly string secretKey = "Nj6q0igAfXo0iJugiXSLSEXqiZcmaWR9tPaDaLpa";
         private static readonly string issuer = "http://localhost:38458";
         private static readonly string audience = "http://localhost:38458";
         private static readonly SymmetricSecurityKey securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));

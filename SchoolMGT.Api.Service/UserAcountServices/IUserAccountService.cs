@@ -9,7 +9,7 @@ namespace SchoolMGT.Api.Service.UserAcountServices
 {
     public interface IUserAccountService
     {
-        Task<UserAccountDTO> AddUser(UserAccountDTO userAccount);
+        Task<UserAccountDTO> AddUser(UserAccount userAccount);
         Task<UserAccountDTO> UpdateUser(UserAccountDTO userAccount);
         Task<UserAccountDTO> AuthenticateUser(UserAccountDTO userAccount);
     }
